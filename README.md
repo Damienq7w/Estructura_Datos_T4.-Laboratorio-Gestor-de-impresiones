@@ -122,15 +122,27 @@ java DemoGestorImpresiones > ../salida.txt
 
 - Codigo fuente: [`Gestor/`](Gestor/)
 - Salida de consola: [`salida.txt`](salida.txt)
+- Capturas de ejecucion: [`Capturas de Ejecucion/`](Capturas%20de%20Ejecucion/)
+- Diagrama de clases: [`Diagrama de Clases/`](Diagrama%20de%20Clases/)
+- Documento del laboratorio: [`Documento/`](Documento/)
+- Traza manual: seccion [Traza manual](#traza-manual) de este README
 
 ## Estructura del repositorio
 
 ```
 .
+├── Capturas de Ejecucion/
+│   ├── Ejecucion1.png                 # Captura de la ejecucion 
+│   └── Ejecucion2.png                 # Captura de la ejecucion 
+├── Diagrama de Clases/
+│   └── DiagramaGestorImpresiones.png  # Diagrama de clases del gestor
+├── Documento/
+│   └── T4-LaboratorioGestorImpresiones.pdf  # Documento del laboratorio
 ├── Gestor/
-│   ├── GestorImpresiones.java     # TDA: cola de pendientes + pila de historial
-│   └── DemoGestorImpresiones.java # Banco de pruebas con 11 operaciones
-├── salida.txt                     # Ejecucion real capturada
+│   ├── GestorImpresiones.java         # TDA: cola de pendientes + pila de historial
+│   └── DemoGestorImpresiones.java     # Banco de pruebas con 11 operaciones
+├── .gitignore
+├── salida.txt                         # Ejecucion real capturada
 └── README.md
 ```
 
