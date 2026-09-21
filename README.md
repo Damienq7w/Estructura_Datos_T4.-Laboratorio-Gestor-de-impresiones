@@ -1,4 +1,4 @@
-# Laboratorio T4 — Gestor de impresiones
+# T4 — Laboratorio Gestor de impresiones
 
 **Estructura de Datos** · Ingenieria en Software · Universidad Tecnica de Ambato · Tercer semestre
 
