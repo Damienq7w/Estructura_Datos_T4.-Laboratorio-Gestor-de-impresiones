@@ -2,12 +2,18 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Iterator;
 
+// TDA: pendientes es una cola FIFO de documentos por imprimir e historial es
+// una pila LIFO de documentos ya impresos. Se usa ArrayDeque porque implementa
+// Deque de forma eficiente sin las desventajas de Stack ni LinkedList.
+// guardarImpresion es privado a proposito: imprimir y archivar son una sola
+// transaccion, asi el historial nunca queda desincronizado de lo impreso.
 public class GestorImpresiones {
 
-    // pendientes se usa solo como COLA: offerLast, pollFirst, peekFirst y addFirst al recuperar.
-    private Deque<String> pendientes;
-    // historial se usa solo como PILA: push, pop y peek.
-    private Deque<String> historial;
+    // pendientes se usa solo como COLA: offerLast, pollFirst, isEmpty, size.
+    // Unica excepcion: addFirst dentro de recuperarUltima (ver comentario alli).
+    private final Deque<String> pendientes;
+    // historial se usa solo como PILA: push, pop, isEmpty, size.
+    private final Deque<String> historial;
 
     public GestorImpresiones() {
         pendientes = new ArrayDeque<>();
@@ -52,6 +58,9 @@ public class GestorImpresiones {
             return null;
         }
         String ultimo = historial.pop();
+        // addFirst es la unica excepcion al uso de pendientes como cola pura:
+        // el documento ya espero su turno una vez, asi que vuelve al frente
+        // en lugar de hacer fila de nuevo al final.
         pendientes.addFirst(ultimo);
         return ultimo;
     }
@@ -72,20 +81,16 @@ public class GestorImpresiones {
         return historial.size();
     }
 
-    // Muestra pendientes de frente a final e historial de cima a fondo.
+    // Un solo recorrido sirve para ambas estructuras: el iterator de ArrayDeque
+    // siempre va de cabeza a cola. En pendientes la cabeza es el frente (cola
+    // FIFO normal). En historial la cabeza tambien es la cima, porque push()
+    // equivale a addFirst(), asi que cabeza y cima son el mismo elemento.
     public void mostrarEstado() {
-        System.out.println("Pendientes (frente -> final): " + textoDesdeFrente(pendientes));
-        System.out.println("Historial (cima -> fondo): " + textoDesdeCima(historial));
+        System.out.println("Pendientes (frente -> final): " + representar(pendientes));
+        System.out.println("Historial (cima -> fondo): " + representar(historial));
     }
 
-    // pendientes es cola: iterator() de ArrayDeque recorre de cabeza (frente) a cola (final).
-    private String textoDesdeFrente(Deque<String> estructura) {
-        return construirTexto(estructura.iterator());
-    }
-
-    // historial es pila armada con push (equivale a addFirst), por lo que iterator()
-    // recorre de cabeza (cima) a cola (fondo).
-    private String textoDesdeCima(Deque<String> estructura) {
+    private String representar(Deque<String> estructura) {
         return construirTexto(estructura.iterator());
     }
 

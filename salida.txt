@@ -1,0 +1,55 @@
+
+=== Paso 1: Imprimir con la cola de pendientes vacia ===
+No hay documentos pendientes
+Pendientes (frente -> final): []
+Historial (cima -> fondo): []
+
+=== Paso 2: Recuperar con el historial vacio ===
+No hay impresiones para recuperar
+Pendientes (frente -> final): []
+Historial (cima -> fondo): []
+
+=== Paso 3: Registrar nombre en blanco ===
+Registrado: false
+Pendientes (frente -> final): []
+Historial (cima -> fondo): []
+
+=== Paso 4: Registrar Informe.pdf ===
+Registrado: true
+Pendientes (frente -> final): [Informe.pdf]
+Historial (cima -> fondo): []
+
+=== Paso 5: Registrar Tarea.docx ===
+Registrado: true
+Pendientes (frente -> final): [Informe.pdf, Tarea.docx]
+Historial (cima -> fondo): []
+
+=== Paso 6: Registrar Foto.png ===
+Registrado: true
+Pendientes (frente -> final): [Informe.pdf, Tarea.docx, Foto.png]
+Historial (cima -> fondo): []
+
+=== Paso 7: Imprimir siguiente ===
+Se imprimio: Informe.pdf
+Pendientes (frente -> final): [Tarea.docx, Foto.png]
+Historial (cima -> fondo): [Informe.pdf]
+
+=== Paso 8: Imprimir siguiente ===
+Se imprimio: Tarea.docx
+Pendientes (frente -> final): [Foto.png]
+Historial (cima -> fondo): [Tarea.docx, Informe.pdf]
+
+=== Paso 9: Recuperar ultima impresion ===
+Se recupero: Tarea.docx
+Pendientes (frente -> final): [Tarea.docx, Foto.png]
+Historial (cima -> fondo): [Informe.pdf]
+
+=== Paso 10: Imprimir siguiente ===
+Se imprimio: Tarea.docx
+Pendientes (frente -> final): [Foto.png]
+Historial (cima -> fondo): [Tarea.docx, Informe.pdf]
+
+=== Paso 11: Imprimir siguiente ===
+Se imprimio: Foto.png
+Pendientes (frente -> final): []
+Historial (cima -> fondo): [Foto.png, Tarea.docx, Informe.pdf]
