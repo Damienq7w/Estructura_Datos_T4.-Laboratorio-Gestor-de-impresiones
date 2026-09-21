@@ -122,7 +122,6 @@ java DemoGestorImpresiones > ../salida.txt
 
 - Codigo fuente: [`Gestor/`](Gestor/)
 - Salida de consola: [`salida.txt`](salida.txt)
-- Traza manual: [`TRAZA.md`](TRAZA.md) (incluida tambien en este README)
 
 ## Estructura del repositorio
 
@@ -132,7 +131,6 @@ java DemoGestorImpresiones > ../salida.txt
 │   ├── GestorImpresiones.java     # TDA: cola de pendientes + pila de historial
 │   └── DemoGestorImpresiones.java # Banco de pruebas con 11 operaciones
 ├── salida.txt                     # Ejecucion real capturada
-├── TRAZA.md                       # Traza manual de ambas estructuras
 └── README.md
 ```
 
